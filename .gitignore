@@ -1,0 +1,53 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python caching and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+.nosexy
+
+# Environment variables (contains sensitive API keys)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Candidate uploaded files and generated reports
+backend/uploads/*
+backend/reports/*
+uploads/*
+!backend/uploads/.gitkeep
+!backend/reports/.gitkeep
+
+# Node.js dependencies (Frontend)
+node_modules/
+frontend/node_modules/
+
+# Frontend builds
+frontend/dist/
+frontend/build/
+frontend/.svelte-kit/
+frontend/.next/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

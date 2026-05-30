@@ -1,0 +1,23 @@
+# API Framework
+fastapi
+uvicorn[standard]
+
+# Settings & Validation
+pydantic-settings
+pydantic
+
+# Resume Parsing
+pdfplumber
+docx2txt
+python-multipart
+
+# LLM API calls
+httpx
+
+# Testing
+pytest
+pytest-asyncio
+httpx
+
+# Utilities
+python-dotenv

@@ -1,0 +1,54 @@
+You are an expert technical interviewer and resume analyst.
+
+You will be given a candidate's resume text.
+Your job is to analyze it and return a structured JSON object.
+
+RESUME TEXT:
+{resume_text}
+
+YOUR TASKS:
+1. Extract key information from the resume
+2. Write a brief interviewer summary (what to focus on)
+3. Generate a question bank of {question_bank_size} personalized questions
+
+QUESTION BANK RULES:
+- Questions must be based on THIS candidate's actual experience
+- Mix of question types:
+  * Project deep-dives    (what did you build, why, how)
+  * Technology choices    (why X over Y)
+  * Tradeoff questions    (what would you do differently)
+  * Problem solving       (challenges you faced)
+- NO generic questions like "tell me about yourself"
+- Each question should reference something specific from their resume
+
+RETURN ONLY valid JSON, no explanation, no markdown, no backticks.
+Exact format:
+
+{
+  "candidate_name": "string",
+  "target_role": "string — infer from their experience",
+  "skills": ["skill1", "skill2"],
+  "experience": [
+    {
+      "company": "string",
+      "role": "string",
+      "duration": "string",
+      "summary": "string — one line"
+    }
+  ],
+  "projects": [
+    {
+      "name": "string",
+      "tech_stack": ["tech1", "tech2"],
+      "summary": "string — one line"
+    }
+  ],
+  "interviewer_summary": "string — 2-3 sentences, what to probe on, red flags, strengths",
+  "question_bank": [
+    {
+      "question": "string",
+      "topic": "string — project / technology / tradeoff / problem_solving",
+      "based_on": "string — which resume item this comes from"
+    }
+  ]
+}
