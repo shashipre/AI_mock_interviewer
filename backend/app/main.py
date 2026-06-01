@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.v1 import resume
+from app.api.v1 import resume,session, interview
 from app.logger import logger
 from app.config import settings
 
@@ -20,6 +20,8 @@ app.add_middleware(
 )
 
 app.include_router(resume.router, prefix="/api/v1/resume", tags=["resume"])
+app.include_router(session.router, prefix="/api/v1/session", tags=["session"])
+app.include_router(interview.router, prefix="/api/v1/interview", tags=["interview"])
 
 @app.on_event("startup")
 async def startup():

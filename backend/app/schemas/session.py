@@ -4,7 +4,7 @@ from app.schemas.resume import Question
 
 
 class CandidateInfo(BaseModel):
-    candidate_name: str
+    candidate_name: str = ""
     target_role: str
     interviewer_summary: str
 
@@ -20,25 +20,24 @@ class ConversationEntry(BaseModel):
 
 class Session(BaseModel):
     # identity
-    session_id: str
-    start_time: datetime = Field(
-        default_factory=datetime.now
-    )
+    session_id: str = ""
+    start_time: datetime = Field(default_factory=datetime.now)
     end_time: datetime | None = None
 
     # candidate
-    candidate_info: CandidateInfo
+    candidate_info: CandidateInfo | None = None
 
     # questions
-    question_bank: list[Question]
+    question_bank: list[Question] = Field(default_factory=list)
     current_question: str | None = None
     current_question_type: str = "bank"
 
     # conversation
-    conversation: list[ConversationEntry] = []
+    conversation: list[ConversationEntry] = Field(default_factory=list)
 
     # progress tracking
     question_count: int = 0
-    bank_questions_asked: list[int] = []
+    consecutive_followups: int = 0
+    bank_questions_asked: list[int] = Field(default_factory=list)
     # status
-    status: str = "active"          # "active" or "ended"
+    status: str = "active"

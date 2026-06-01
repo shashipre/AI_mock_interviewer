@@ -10,7 +10,7 @@ from app.exceptions import (
     LLMTimeoutError,
     ResumeTooShortError,
 )
-from config import settings
+from app.config import settings
 
 from app.logger import logger
 from fastapi import HTTPException

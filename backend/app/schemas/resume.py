@@ -17,13 +17,16 @@ class Question(BaseModel):
     topic: str
     based_on: str
 
-class ResumeAnalysis(BaseModel):
-    candidate_name: str
+class CandidateInfo(BaseModel):
+    candidate_name: str = ""
     target_role: str
+    interviewer_summary: str
+
+class ResumeAnalysis(BaseModel):
+    candidate_info : CandidateInfo
     skills: list[str]
     experience: list[Experience]
     projects: list[Project]
-    interviewer_summary: str
     question_bank: list[Question]
 
 

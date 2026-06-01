@@ -30,4 +30,6 @@ class LLMJSONParseError(LLMError):
     """Raised when LLM response cannot be parsed as JSON"""
     pass
 
-
+class SessionNotFoundError(LLMError):
+    """Raise when session is not present"""
+    pass
