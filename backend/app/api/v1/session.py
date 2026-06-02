@@ -66,8 +66,8 @@ async def start_session(
 async def end_session(session_id: str) -> dict:
     """
     Marks a session as ended and records the end timestamp.
-    This endpoint is a manual “give‑up” path; the normal flow ends automatically
-    when the Follow‑up Engine signals completion.
+    This endpoint is a manual “give-up” path; the normal flow ends automatically
+    when the Follow-up Engine signals completion.
     """
     if not session_store.exists(session_id):
         raise HTTPException(status_code=404, detail="Session not found")

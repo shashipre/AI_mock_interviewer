@@ -21,3 +21,8 @@ httpx
 
 # Utilities
 python-dotenv
+
+faster-whisper
+
+piper-tts
+onnxruntime-gpu

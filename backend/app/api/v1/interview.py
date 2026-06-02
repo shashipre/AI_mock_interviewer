@@ -16,7 +16,7 @@ async def submit_answer(
 )-> QuestionResponse:
     """
     Handles a candidate's answer, updates the session state,
-    runs the Follow-up Engine, and returns either:
+    runs the Followup Engine, and returns either:
     * the next question (bank or follow-up) OR
     * a flag indicating the interview is complete.
     """
@@ -46,7 +46,7 @@ async def submit_answer(
         session.status = "ended"
         session.end_time = session.end_time or session.start_time
         session_store.update_session(session)
-    
+
         return QuestionResponse(
                 session_id=session.session_id,
                 question="",

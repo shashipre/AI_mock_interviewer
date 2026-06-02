@@ -33,3 +33,9 @@ class LLMJSONParseError(LLMError):
 class SessionNotFoundError(LLMError):
     """Raise when session is not present"""
     pass
+
+class AudioProcessingError(Exception):
+    """Raised when audio processing fails"""
+
+class TranscriptionError(Exception):
+    """Raised when speech transcription fails"""
