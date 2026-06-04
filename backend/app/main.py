@@ -27,7 +27,7 @@ app = FastAPI(
     title = "AI MOCK Interviewer",
     description = "Resume-based adaptive voice interviewer",
     version = "1.0.0",
-    debug = settings.debug
+    debug = settings.debug,
     lifespan= lifespan
 )
 
