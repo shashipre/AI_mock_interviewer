@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import api, { ResumeAnalysis, QuestionResponse } from '../services/api';
+import api from '../services/api';
+import type { ResumeAnalysis, QuestionResponse } from '../services/api';
 
 interface UploadProps {
   onInterviewStarted: (sessionData: QuestionResponse) => void;

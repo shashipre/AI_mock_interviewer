@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Upload } from './pages/Upload';
 import { Interview } from './pages/Interview';
 import { Report } from './pages/Report';
-import { QuestionResponse } from './services/api';
+import type { QuestionResponse } from './services/api';
 
 type AppStep = 'upload' | 'interview' | 'report';
 

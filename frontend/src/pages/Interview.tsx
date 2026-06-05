@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import api, { QuestionResponse } from '../services/api';
+import api from '../services/api';
+import type { QuestionResponse } from '../services/api';
 import { QuestionCard } from '../components/QuestionCard';
 import { TranscriptBox } from '../components/TranscriptBox';
-import { MicButton, MicState } from '../components/MicButton';
+import { MicButton } from '../components/MicButton';
+import type { MicState } from '../components/MicButton';
 import { AnswerCompleteButton } from '../components/AnswerCompleteButton';
 import { audioRecorder } from '../services/audioRecorder';
 import { sttSocketManager } from '../services/sttSocket';
@@ -63,7 +65,7 @@ export const Interview: React.FC<InterviewProps> = ({ initialSession, onIntervie
       () => {
         console.log("TTS audio streaming finished successfully.");
       },
-      (err) => {
+      (_err) => {
         setError("Error streaming voice audio. You can read the question text instead.");
       }
     );
@@ -116,7 +118,7 @@ export const Interview: React.FC<InterviewProps> = ({ initialSession, onIntervie
         (data) => {
           setTranscript(data.transcript);
         },
-        (err) => {
+        (_err) => {
           setError("Speech translation server disconnected. You can type in the box.");
           setMicState('idle');
           audioRecorder.stop();

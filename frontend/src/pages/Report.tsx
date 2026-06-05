@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 import { ScoreCard, EvaluationData } from '../components/ScoreCard';
 
+
 interface ReportProps {
   sessionId: string;
   onRestart: () => void;
